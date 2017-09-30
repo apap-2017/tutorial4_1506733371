@@ -104,10 +104,8 @@ public class StudentController
 
     @RequestMapping("/student/update/{npm}")
     public String update (Model model, @PathVariable(value = "npm") String npm)
-    {
-    	StudentModel student = studentDAO.selectStudent(npm);
-    	
-	if(student == null) {
+    {	
+	if(studentDAO.selectStudent(npm) == null) {
     		return "not-found";
     	}
     	
